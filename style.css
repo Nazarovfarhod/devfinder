@@ -8,7 +8,6 @@
   --color-quaternary-light: #2b3442;
   --color-background-light: #f6f8ff;
   --color-surface-light: #fefefe;
-  --color-secondary-light: #f6f8ff;
 
   /* Dark Mode Colors */
   --color-primary-dark: #0079ff;
@@ -30,9 +29,7 @@ body {
   font-family: "Space Mono", monospace;
   font-weight: 400;
   height: 100vh;
-  padding-top: 50px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 50px 10px 0 10px;
 }
 
 .container {
@@ -45,6 +42,7 @@ body {
   align-items: center;
   margin-bottom: 36px;
 }
+
 .moad-container {
   width: 89px;
   display: flex;
@@ -53,30 +51,30 @@ body {
   cursor: pointer;
 }
 
+.moad-container p {
+  color: var(--color-secondary-dark);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
 .moad-container p:hover {
   color: #90a4d4;
 }
 
-.moad-container p {
-  color: var(--color-secondary-dark);
-  font-weight: bold;
+.sun,
+.moon {
+  cursor: pointer;
 }
 
-.sun {
-  cursor: pointer;
-}
 .moon {
   display: none;
-  cursor: pointer;
 }
+
 .search {
   display: flex;
   gap: 24px;
   align-items: center;
-  padding-left: 32px;
-  padding-right: 10px;
-  padding-top: 9.5px;
-  padding-bottom: 9.5px;
+  padding: 9.5px 10px 9.5px 32px;
   background-color: var(--color-quaternary-dark);
   margin-bottom: 24px;
   border-radius: 20px;
@@ -104,19 +102,16 @@ body {
 }
 
 .search button {
-  padding-top: 13px;
-  padding-bottom: 13px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 13px 24px;
   background-color: var(--color-primary-light);
   font-size: 16px;
   font-weight: 700;
   line-height: 23.7px;
-  text-align: left;
   color: var(--color-secondary-dark);
   border: none;
   border-radius: 15px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .search button:hover {
@@ -161,20 +156,17 @@ main {
 }
 
 .followers {
-  width: 100%;
   display: flex;
   justify-content: end;
   padding-right: 48px;
+  width: 100%;
 }
 
 .followers-container {
   display: flex;
   gap: 99px;
   background-color: var(--color-tertiary-dark);
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 32px;
-  padding-right: 83px;
+  padding: 15px 83px 15px 32px;
   border-radius: 20px;
   margin-bottom: 32px;
 }
@@ -195,24 +187,18 @@ main {
 }
 
 .contact {
-  width: 100%;
   display: flex;
   justify-content: end;
   padding-right: 90px;
+  width: 100%;
 }
 
 .contact-container {
   display: flex;
-  justify-content: start;
   gap: 62px;
 }
 
-.contact-container-right {
-  display: flex;
-  flex-direction: column;
-  gap: 19px;
-}
-
+.contact-container-right,
 .contact-container-left {
   display: flex;
   flex-direction: column;
@@ -223,6 +209,7 @@ main {
   display: flex;
   align-items: center;
   gap: 16px;
+  transition: text-decoration 0.3s ease;
 }
 
 .contact-text:hover {
@@ -230,68 +217,44 @@ main {
   cursor: pointer;
 }
 
-.location-light {
-  display: none;
-}
-.twitter-light {
-  display: none;
-}
-.link-light {
-  display: none;
-}
+.location-light,
+.twitter-light,
+.link-light,
 .home-light {
   display: none;
 }
-.location {
-  display: block;
-}
-.twitter {
-  display: block;
-}
-.link {
-  display: block;
-}
+
+.location,
+.twitter,
+.link,
 .home {
   display: block;
 }
 
-.locationLink {
-  color: var(--color-secondary-dark);
-  text-decoration: none;
-  width: 190px;
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.linkLink {
-  color: var(--color-secondary-dark);
-  text-decoration: none;
-  width: 190px;
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.twitterLink {
-  color: var(--color-secondary-dark);
-  text-decoration: none;
-}
+.locationLink,
+.linkLink,
+.twitterLink,
 .homeLink {
   color: var(--color-secondary-dark);
   text-decoration: none;
-  width: 100px;
-  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.locationLink,
+.linkLink {
+  width: 190px;
+}
+
+.homeLink {
+  width: 100px;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .container {
-    margin-left: 80px;
-    margin-right: 80px;
+    margin: 0 80px;
   }
 
   .search {
@@ -299,21 +262,12 @@ main {
   }
 
   .followers {
-    width: 100%;
-    display: flex;
     justify-content: start;
     padding-left: 30px;
   }
 
   .followers-container {
-    display: flex;
-    gap: 99px;
-    background-color: var(--color-tertiary-dark);
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 32px;
     padding-right: 85px;
-    border-radius: 20px;
   }
 
   .user {
@@ -328,7 +282,6 @@ main {
   }
 
   .userBio {
-    width: 100%;
     font-size: 14px;
     line-height: 22px;
     margin-left: -120px;
@@ -338,9 +291,12 @@ main {
 }
 
 @media (max-width: 480px) {
+  .nav {
+    margin-bottom: 36px;
+  }
+
   .container {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin: 0 40px;
   }
 
   .search {
@@ -348,39 +304,25 @@ main {
   }
 
   .followers {
-    width: 100%;
-    display: flex;
     justify-content: start;
     padding-left: 24px;
   }
 
   .followers-container {
-    display: flex;
     gap: 35px;
-    background-color: var(--color-tertiary-dark);
-    padding-top: 18px;
-    padding-bottom: 18px;
+    padding: 18px;
     padding-left: 15px;
     padding-right: 15px;
-    border-radius: 20px;
   }
 
   .contact {
-    width: 100%;
-    display: flex;
     justify-content: start;
     padding-left: 24px;
   }
 
   .contact-container {
-    display: flex;
     flex-direction: column;
     gap: 35px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 20px;
   }
 
   .user {
