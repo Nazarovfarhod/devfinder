@@ -154,7 +154,9 @@ document.addEventListener("keydown", (e) => {
           document.querySelector(".noResult").style.display = "block";
         } else {
           document.getElementById("userImg").src = `${req.avatar_url}`;
-          document.getElementById("userName").textContent = `${req.name}`;
+          document.getElementById("userName").textContent = req.name
+            ? `${req.name}`
+            : "Unknown!";
           document.getElementById(
             "createDate"
           ).textContent = `Joined ${date}.${month}.${year}`;
