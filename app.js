@@ -28,7 +28,6 @@ searchButton.addEventListener("click", () => {
   fetch(`https://api.github.com/users/${inputValue.value}`)
     .then((data) => data.json())
     .then((req) => {
-      console.log(req);
 
       const year = req.created_at.slice(0, 4);
       const month = req.created_at.slice(5, 7);
@@ -78,7 +77,6 @@ searchButton.addEventListener("click", () => {
       inputValue.value = "";
     })
     .catch((error) => {
-      document.querySelector(".noResult").style.display = "block";
       console.log(error.message);
     });
 });
